@@ -37,19 +37,19 @@ Replace = <result context-2="133190" control-mode="bns" />NewLine            </d
 
 // [Have to be placed before the Storm Wrath (F) change]
 
-// Add Zap to (B) after Storm Wrath (B) in Stormborn
+// Add Awakened Zap to (B) after Storm Wrath (B) in Stormborn
 
 Search = <layer>NewLine           <decision>NewLine             <condition skill="133210" />NewLine             <result context-3="133210" control-mode="classic" />NewLine
-Replace = <layer> <decision> <condition skill="133022" /> <result special-2="133022" control-mode="classic" /> <result special-2="133022" control-mode="bns" /> </decision> </layer> <layer>NewLine           <decision>NewLine             <condition skill="133210" />NewLine             <result context-3="133210" control-mode="classic" />NewLine
+Replace = <layer> <decision> <condition skill="133032" /> <result special-2="133032" control-mode="classic" /> <result special-2="133032" control-mode="bns" /> </decision> </layer> <layer>NewLine           <decision>NewLine             <condition skill="133210" />NewLine             <result context-3="133210" control-mode="classic" />NewLine
 
 // --------------------------------------------------------------------------
 
 // [Have to be placed before the Storm Wrath (F) change]
 
-// Add Awakened Zap to (B) after Storm Wrath (B) in Stormborn
+// Add Zap to (B) after Storm Wrath (B) in Stormborn
 
 Search = <layer>NewLine           <decision>NewLine             <condition skill="133210" />NewLine             <result context-3="133210" control-mode="classic" />NewLine
-Replace = <layer> <decision> <condition skill="133032" /> <result special-2="133032" control-mode="classic" /> <result special-2="133032" control-mode="bns" /> </decision> </layer> <layer>NewLine           <decision>NewLine             <condition skill="133210" />NewLine             <result context-3="133210" control-mode="classic" />NewLine
+Replace = <layer> <decision> <condition skill="133022" /> <result special-2="133022" control-mode="classic" /> <result special-2="133022" control-mode="bns" /> </decision> </layer> <layer>NewLine           <decision>NewLine             <condition skill="133210" />NewLine             <result context-3="133210" control-mode="classic" />NewLine
 
 // --------------------------------------------------------------------------
 
@@ -83,7 +83,7 @@ Replace = <result context-3="133050" control-mode="bns" />NewLine            </d
 
 // [Have to be placed before the Lightning Sheath (V) change]
 
-// Add Empty Skill on (V) when Trip Wire (V) is on cooldown to prevent the cancel of Storm Shroud when autocasting Charge (0 - 4 stacks)
+// Add Empty Skill on (V) when Trip Wire (V) is on cooldown to prevent the cancel of Storm Shroud when autocasting Volt Salvo
 
 Search = <result control-mode="bns" skillbar-8="133231" />NewLine            </decision>NewLine          </layer>
 Replace = <result control-mode="bns" skillbar-8="133231" />NewLine            </decision>NewLine          </layer> <layer> <decision> <condition skill="133220" /> <result skillbar-8="501" control-mode="classic" /> <result skillbar-8="501" control-mode="bns" /> </decision> </layer>
