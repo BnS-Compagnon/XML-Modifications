@@ -81,6 +81,15 @@ Replace = <result context-3="133050" control-mode="bns" />NewLine            </d
 
 // --------------------------------------------------------------------------
 
+// [Have to be placed before the Lightning Sheath (V) change]
+
+// Add Empty Skill on (V) when Trip Wire (V) is on cooldown to prevent the cancel of Storm Shroud when autocasting Charge (0 - 4 stacks)
+
+Search = <result control-mode="bns" skillbar-8="133231" />NewLine            </decision>NewLine          </layer>
+Replace = <result control-mode="bns" skillbar-8="133231" />NewLine            </decision>NewLine          </layer> <layer> <decision> <condition skill="133220" /> <result skillbar-8="501" control-mode="classic" /> <result skillbar-8="501" control-mode="bns" /> </decision> </layer>
+
+// --------------------------------------------------------------------------
+
 // Remove Lightning Storm from simple mode
 
 // Normal : 0 - 4 stacks
