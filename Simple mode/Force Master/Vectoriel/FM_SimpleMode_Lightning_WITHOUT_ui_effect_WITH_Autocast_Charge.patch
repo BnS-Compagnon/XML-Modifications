@@ -1,0 +1,386 @@
+FileName = xml[bit].dat.files\\skill3_contextscriptdata_forcemaster_contextsimplemode.xml
+
+// ----------------------------
+// ------- By Vectoriel -------
+// ----------------------------
+// --- Modfications for PVE ---
+// ----------------------------
+
+// context-1= LMB
+// context-2= RMB
+// context-3= F
+// skillbar-1= 1
+// skillbar-2= 2
+// skillbar-3= 3
+// skillbar-4= 4
+// skillbar-5= Z
+// skillbar-6= X
+// skillbar-7= C
+// skillbar-8= V
+// stance= TAB
+// cmd-key-right= E
+// cmd-key-left= Q
+// cmd-key-down= SS
+// special-1= G
+// special-2= B
+
+// --------------------------------------------------------------------------
+
+// [Have to be placed before the Electrocute (LMB) change]
+
+// Add Magnetize to (B) after Electrocute (B) in Normal and Overcharge
+
+Search = <result context-2="133190" control-mode="bns" />NewLine            </decision>NewLine          </layer>
+Replace = <result context-2="133190" control-mode="bns" />NewLine            </decision>NewLine          </layer> <layer> <decision> <condition skill="133070" /> <result special-2="133070" control-mode="classic" /> <result special-2="133070" control-mode="bns" /> </decision> </layer>
+
+// --------------------------------------------------------------------------
+
+// [Have to be placed before the Storm Wrath (F) change]
+
+// Add Zap to (B) after Storm Wrath (B) in Stormborn
+
+Search = <layer>NewLine           <decision>NewLine             <condition skill="133210" />NewLine             <result context-3="133210" control-mode="classic" />NewLine
+Replace = <layer> <decision> <condition skill="133022" /> <result special-2="133022" control-mode="classic" /> <result special-2="133022" control-mode="bns" /> </decision> </layer> <layer>NewLine           <decision>NewLine             <condition skill="133210" />NewLine             <result context-3="133210" control-mode="classic" />NewLine
+
+// --------------------------------------------------------------------------
+
+// [Have to be placed before the Storm Wrath (F) change]
+
+// Add Awakened Zap to (B) after Storm Wrath (B) in Stormborn
+
+Search = <layer>NewLine           <decision>NewLine             <condition skill="133210" />NewLine             <result context-3="133210" control-mode="classic" />NewLine
+Replace = <layer> <decision> <condition skill="133032" /> <result special-2="133032" control-mode="classic" /> <result special-2="133032" control-mode="bns" /> </decision> </layer> <layer>NewLine           <decision>NewLine             <condition skill="133210" />NewLine             <result context-3="133210" control-mode="classic" />NewLine
+
+// --------------------------------------------------------------------------
+
+// [Have to be placed before the Trip Wire (F) change]
+
+// Add Charge (0 - 4 stacks) on (V)
+// Autocast Charge (0 - 4 stacks) on (V)
+
+Search = <result context-3="133050" control-mode="bns" />NewLine            </decision>NewLine          </layer>
+Replace = <result context-3="133050" control-mode="bns" />NewLine            </decision>NewLine          </layer> <layer> <decision> <condition skill="133100" /> <result skillbar-8="133100" control-mode="classic" key-status="unpress" /> <result skillbar-8="133100" control-mode="bns" key-status="unpress" /> </decision> </layer>
+
+// --------------------------------------------------------------------------
+
+// [Have to be placed before the Trip Wire (F) change]
+
+// Add Empty Skill on (V) when using Storm Shroud (Block) to prevent the cancel of Storm Shroud when autocasting Charge (0 - 4 stacks) and not targeting an ennemy
+
+Search = <result context-3="133050" control-mode="bns" />NewLine            </decision>NewLine          </layer>
+Replace = <result context-3="133050" control-mode="bns" />NewLine            </decision>NewLine          </layer> <layer> <decision> <condition skill="133220" /> <result skillbar-8="501" control-mode="classic" /> <result skillbar-8="501" control-mode="bns" /> </decision> </layer>
+
+// --------------------------------------------------------------------------
+
+// [Have to be placed before the Trip Wire (F) change]
+
+// Add Empty Skill on (V) when there's 4 stacks of Charge
+
+Search = <result context-3="133050" control-mode="bns" />NewLine            </decision>NewLine          </layer>
+Replace = <result context-3="133050" control-mode="bns" />NewLine            </decision>NewLine          </layer> <layer> <decision> <condition skill="133101" /> <result skillbar-8="501" control-mode="classic" /> <result skillbar-8="501" control-mode="bns" /> </decision> </layer>
+
+// --------------------------------------------------------------------------
+
+// Remove Lightning Storm from simple mode
+
+// Normal : 0 - 4 stacks
+Search = <condition skill="133180" />
+Replace = 
+Search = <result context-2="133180" control-mode="classic" />
+Replace = 
+Search = <result context-2="133180" control-mode="bns" />
+Replace = 
+
+// Overcharge : 5 stack
+Search = <condition skill="133181" />
+Replace = 
+Search = <result context-2="133181" control-mode="classic" />
+Replace = 
+Search = <result context-2="133181" control-mode="bns" />
+Replace = 
+
+// Stormborn
+Search = <condition skill="133182" />
+Replace = 
+Search = <result context-2="133182" control-mode="classic" />
+Replace = 
+Search = <result context-2="133182" control-mode="bns" />
+Replace = 
+
+// --------------------------------------------------------------------------
+
+// Remove Volt Salvo from simple mode
+Search = <condition skill="133200" />NewLine              <result context-2="133200" control-mode="classic" />
+Replace = 
+Search = <result context-2="133200" control-mode="bns" />
+Replace = 
+
+// --------------------------------------------------------------------------
+
+// Remove Electrocute from (Z)
+
+Search = <result control-mode="classic" skillbar-5="133190" />
+Replace = 
+Search = <result control-mode="bns" skillbar-5="133190" />
+Replace = 
+
+// --------------------------------------------------------------------------
+
+// Remove Awakened Zap from (2) because it's used in simple mode
+
+// Normal : 0 - 4 stacks
+Search = <result control-mode="classic" skillbar-2="133030" />
+Replace = 
+Search = <result control-mode="bns" skillbar-2="133030" />
+Replace = 
+
+// Overcharge : 5 stack
+Search = <result control-mode="classic" skillbar-2="133031" />
+Replace = 
+Search = <result control-mode="bns" skillbar-2="133031" />
+Replace = 
+
+// Stormborn
+Search = <result control-mode="classic" skillbar-2="133032" />
+Replace = 
+Search = <result control-mode="bns" skillbar-2="133032" />
+Replace = 
+
+// --------------------------------------------------------------------------
+
+// Move Electrocute from simple mode to (B)
+
+Search = <result context-2="133190" control-mode="classic" />
+Replace = <result special-2="133190" control-mode="classic" />
+Search = <result context-2="133190" control-mode="bns" />
+Replace = <result special-2="133190" control-mode="bns" />
+
+// --------------------------------------------------------------------------
+
+// [Have to be placed after the Volt Salvo simple mode remove]
+
+// Autocast Volt Salvo
+// Move Volt Salvo from (F) to (V)
+
+Search = <condition skill="133200" />
+Replace = <condition field="job-style-only" job-style="advanced-3" />
+Search = <result context-3="133200" control-mode="classic" />
+Replace = <result skillbar-8="133200" control-mode="classic" key-status="unpress" />
+Search = <result context-3="133200" control-mode="bns" />
+Replace = <result skillbar-8="133200" control-mode="bns" key-status="unpress" />
+
+// --------------------------------------------------------------------------
+
+// Autocast Magnetize (4) in Stormborn
+
+Search = <result control-mode="bns" skillbar-8="133232" />NewLine           </decision>NewLine         </layer>
+Replace = <result control-mode="bns" skillbar-8="133232" />NewLine           </decision>NewLine         </layer> <layer> <decision> <condition field="job-style-only" job-style="advanced-3" /> <result control-mode="classic" skillbar-4="133071" key-status="unpress" /> <result control-mode="bns" skillbar-4="133071" key-status="unpress" /> </decision> </layer>
+
+// --------------------------------------------------------------------------
+
+// Autocast Lightning Storm in Stormborn
+// Move Lightning Storm from (V) to (C) in Stormborn
+
+Search = <result control-mode="bns" skillbar-8="133232" />NewLine           </decision>NewLine         </layer>
+Replace = <result control-mode="bns" skillbar-8="133232" />NewLine           </decision>NewLine         </layer> <layer> <decision> <condition field="job-style-only" job-style="advanced-3" /> <result control-mode="classic" skillbar-7="133182" key-status="unpress" /> <result control-mode="bns" skillbar-7="133182" key-status="unpress" /> </decision> </layer>
+
+// --------------------------------------------------------------------------
+
+// Autocast Lightning Strike in Stormborn
+
+Search = <result control-mode="bns" skillbar-8="133232" />NewLine           </decision>NewLine         </layer>
+Replace = <result control-mode="bns" skillbar-8="133232" />NewLine           </decision>NewLine         </layer> <layer> <decision> <condition field="job-style-only" job-style="advanced-3" /> <result control-mode="classic" skillbar-6="133162" key-status="unpress" /> <result control-mode="bns" skillbar-6="133162" key-status="unpress" /> </decision> </layer>
+
+// --------------------------------------------------------------------------
+
+// Move Storm Wrath from (F) to (B) in Stormborn
+
+Search = <result context-3="133210" control-mode="classic" />
+Replace = <result special-2="133210" control-mode="classic" />
+Search = <result context-3="133210" control-mode="bns" />
+Replace = <result special-2="133210" control-mode="bns" />
+
+// --------------------------------------------------------------------------
+
+// Move Trip Wire (KD) from (F) to (V) after Storm Shroud (1)
+
+Search = <result context-3="133050" control-mode="classic" />
+Replace = <result skillbar-8="133050" control-mode="classic" />
+Search = <result context-3="133050" control-mode="bns" />
+Replace = <result skillbar-8="133050" control-mode="bns" />
+
+// --------------------------------------------------------------------------
+
+// Move Lightning Sheath (Ice) from (V) to (2) after Storm Shroud (1)
+
+// Normal : 0 - 4 stacks
+Search = <result control-mode="classic" skillbar-8="133230" />
+Replace = <result control-mode="classic" skillbar-2="133230" />
+Search = <result control-mode="bns" skillbar-8="133230" />
+Replace = <result control-mode="bns" skillbar-2="133230" />
+
+// Overcharge : 5 stack
+Search = <result control-mode="classic" skillbar-8="133231" />
+Replace = <result control-mode="classic" skillbar-2="133231" />
+Search = <result control-mode="bns" skillbar-8="133231" />
+Replace = <result control-mode="bns" skillbar-2="133231" />
+
+// Stormborn
+Search = <result control-mode="classic" skillbar-8="133232" />
+Replace = <result control-mode="classic" skillbar-2="133232" />
+Search = <result control-mode="bns" skillbar-8="133232" />
+Replace = <result control-mode="bns" skillbar-2="133232" />
+
+// --------------------------------------------------------------------------
+
+// Move Divine Veil from (C) to (Z) after Storm Shroud (1)
+
+// Normal : 0 - 4 stacks
+Search = <result control-mode="classic" skillbar-7="133220" />
+Replace = <result control-mode="classic" skillbar-5="133220" />
+Search = <result control-mode="bns" skillbar-7="133220" />
+Replace = <result control-mode="bns" skillbar-5="133220" />
+
+// Overcharge : 5 stack
+Search = <result control-mode="classic" skillbar-7="133221" />
+Replace = <result control-mode="classic" skillbar-5="133221" />
+Search = <result control-mode="bns" skillbar-7="133221" />
+Replace = <result control-mode="bns" skillbar-5="133221" />
+
+// Stormborn
+Search = <result control-mode="classic" skillbar-7="133222" />
+Replace = <result control-mode="classic" skillbar-5="133222" />
+Search = <result control-mode="bns" skillbar-7="133222" />
+Replace = <result control-mode="bns" skillbar-5="133222" />
+
+// --------------------------------------------------------------------------
+
+// Move Charge (5th) from (LMB) to (F)
+
+Search = <result context-1="133101" control-mode="classic" />
+Replace = <result context-3="133101" control-mode="classic" />
+Search = <result context-1="133101" control-mode="bns" />
+Replace = <result context-3="133101" control-mode="bns" />
+
+Search = <result context-1="133102" control-mode="classic" />
+Replace = <result context-3="133102" control-mode="classic" />
+Search = <result context-1="133102" control-mode="bns" />
+Replace = <result context-3="133102" control-mode="bns" />
+
+// --------------------------------------------------------------------------
+
+// Move Equalize (KD) from (F) to (4) in Stormborn after Storm Shroud (1)
+
+Search = <result context-3="133080" control-mode="classic" />
+Replace = <result skillbar-4="133080" control-mode="classic" />
+Search = <result context-3="133080" control-mode="bns" />
+Replace = <result skillbar-4="133080" control-mode="bns" />
+
+// --------------------------------------------------------------------------
+
+// Move Storm Warp from (LMB) to (E) in Stormborn (only forward)
+// This removes all the side dash from (LMB)
+
+Search = <condition combination-key-command-1="strafe-left" skill="133466" />
+Replace = 
+Search = <condition combination-key-command-2="move-forward" skill="133460" />
+Replace = 
+Search = <result context-1="133467" control-mode="classic" />
+Replace = 
+Search = <result context-1="133467" control-mode="bns" />
+Replace = 
+
+Search = <condition combination-key-command-1="strafe-left" skill="133466" />
+Replace = 
+Search = <condition combination-key-command-2="move-backward" skill="133464" />
+Replace = 
+Search = <result context-1="133465" control-mode="classic" />
+Replace = 
+Search = <result context-1="133465" control-mode="bns" />
+Replace = 
+
+Search = <condition combination-key-command-1="move-backward" skill="133464" />
+Replace = 
+Search = <condition combination-key-command-2="strafe-right" skill="133462" />
+Replace = 
+Search = <result context-1="133463" control-mode="classic" />
+Replace = 
+Search = <result context-1="133463" control-mode="bns" />
+Replace = 
+
+Search = <condition combination-key-command-1="strafe-right" skill="133462" />
+Replace = 
+Search = <condition combination-key-command-2="move-forward" skill="133460" />
+Replace = 
+Search = <result context-1="133461" control-mode="classic" />
+Replace = 
+Search = <result context-1="133461" control-mode="bns" />
+Replace = 
+
+Search = <condition combination-key-command-1="move-forward" skill="133460" />
+Replace = 
+Search = <result context-1="133460" control-mode="classic" />
+Replace = 
+Search = <result context-1="133460" control-mode="bns" />
+Replace = 
+
+Search = <condition combination-key-command-1="strafe-right" skill="133462" />
+Replace = 
+Search = <result context-1="133462" control-mode="classic" />
+Replace = 
+Search = <result context-1="133462" control-mode="bns" />
+Replace = 
+
+Search = <condition combination-key-command-1="move-backward" skill="133464" />
+Replace = 
+Search = <result context-1="133464" control-mode="classic" />
+Replace = 
+Search = <result context-1="133464" control-mode="bns" />
+Replace = 
+
+Search = <condition combination-key-command-1="strafe-left" skill="133466" />
+Replace = 
+Search = <result context-1="133466" control-mode="classic" />
+Replace = 
+Search = <result context-1="133466" control-mode="bns" />
+Replace = 
+
+// --------------------------------------------------------------------------
+
+// Fix a typo in the original XML where Awakened Lightning Palm (RMB) would probably not trigger when having 0 - 4 stacks (need to double check)
+
+Search = <result comtext-2="133010" control-mode="classic" />
+Replace = <result context-2="133010" control-mode="classic" />
+Search = <result comtext-2="133010" control-mode="bns" />
+Replace = <result context-2="133010" control-mode="bns" />
+
+// --------------------------------------------------------------------------
+
+// General rebinding
+
+// Normal : 0 - 4 stacks
+Search = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133410" cmd-key-left="133440" cmd-key-right="133450" context-1="133100" context-2="133000" control-mode="classic" skillbar-1="133040" skillbar-2="133020" skillbar-3="133060" skillbar-4="133070" skillbar-5="133190" skillbar-6="133160" skillbar-7="133170" skillbar-8="133180" stance="133240" />
+Replace = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133410" cmd-key-left="133440" cmd-key-right="133450" context-1="133100" context-3="133100" context-2="133000" control-mode="classic" skillbar-1="133040" skillbar-2="133040" skillbar-3="133060" skillbar-4="133180" skillbar-5="133040" skillbar-6="133160" skillbar-7="133170" stance="133240" />
+
+Search = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133410" cmd-key-left="133440" cmd-key-right="133450" context-1="133100" context-2="133000" control-mode="bns" skillbar-1="133040" skillbar-2="133020" skillbar-3="133060" skillbar-4="133070" skillbar-5="133190" skillbar-6="133160" skillbar-7="133170" skillbar-8="133180" stance="133240" />
+Replace = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133410" cmd-key-left="133440" cmd-key-right="133450" context-1="133100" context-3="133100" context-2="133000" control-mode="bns" skillbar-1="133040" skillbar-2="133040" skillbar-3="133060" skillbar-4="133180" skillbar-5="133040" skillbar-6="133160" skillbar-7="133170" stance="133240" />
+
+
+// Overcharge : 5 stack
+Search = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133410" cmd-key-left="133440" cmd-key-right="133450" context-1="133130" context-2="133001" control-mode="classic" skillbar-1="133040" skillbar-2="133021" skillbar-3="133060" skillbar-4="133070" skillbar-5="133120" skillbar-6="133161" skillbar-7="133171" skillbar-8="133181" stance="133240" />
+Replace = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133410" cmd-key-left="133440" cmd-key-right="133450" context-3="133130" context-2="133001" control-mode="classic" skillbar-1="133040" skillbar-2="133040" skillbar-3="133060" skillbar-4="133181" skillbar-5="133040" skillbar-6="133161" skillbar-7="133171" stance="133240" />
+
+Search = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133410" cmd-key-left="133440" cmd-key-right="133450" context-1="133130" context-2="133001" control-mode="bns" skillbar-1="133040" skillbar-2="133021" skillbar-3="133060" skillbar-4="133070" skillbar-5="133120" skillbar-6="133161" skillbar-7="133171" skillbar-8="133181" stance="133240" />
+Replace = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133410" cmd-key-left="133440" cmd-key-right="133450" context-3="133130" context-2="133001" control-mode="bns" skillbar-1="133040" skillbar-2="133040" skillbar-3="133060" skillbar-4="133181" skillbar-5="133040" skillbar-6="133161" skillbar-7="133171" stance="133240" />
+
+
+// Stormborn
+Search = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133412" cmd-key-left="501" cmd-key-right="501" context-1="133460" context-2="133002" control-mode="classic" skillbar-1="133041" skillbar-2="133022" skillbar-3="133062" skillbar-4="133071" skillbar-5="133121" skillbar-6="133162" skillbar-7="133250" skillbar-8="133182" stance="501" />
+Replace = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133412" cmd-key-left="133440" cmd-key-right="133460" context-2="133002" control-mode="classic" skillbar-1="133041" skillbar-2="133041" skillbar-3="133062" skillbar-5="133041" skillbar-8="133250" stance="501" />
+
+Search = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133412" cmd-key-left="501" cmd-key-right="501" context-1="133460" context-2="133002" control-mode="bns" skillbar-1="133041" skillbar-2="133022" skillbar-3="133062" skillbar-4="133071" skillbar-5="133121" skillbar-6="133162" skillbar-7="133250" skillbar-8="133182" stance="501" />
+Replace = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133412" cmd-key-left="133440" cmd-key-right="133460" context-2="133002" control-mode="bns" skillbar-1="133041" skillbar-2="133041" skillbar-3="133062" skillbar-5="133041" skillbar-8="133250" stance="501" />
+
+// --------------------------------------------------------------------------
+
+Description = (By Vectoriel) [Disable Glacier (B), Pulse Break (Z), High Voltage (C), Spark Up (C)] [Macro TB] || Check : https://hackmd.io/O0YUxikESaaPOgXr0XuDWA
