@@ -6,7 +6,7 @@ FileName = xml[bit].dat.files\\skill3_contextscriptdata_forcemaster_contextsimpl
 // --- Modfications for PVE ---
 // ----------------------------
 
-// Last update : 07/03/2020 .0
+// Last update : 07/05/2020 .0
 
 // context-1= LMB
 // context-2= RMB
@@ -59,8 +59,8 @@ Replace = <layer> <decision> <condition skill="133022" /> <result special-2="133
 
 // Add Empty Skill on (4) when Trip Wire (4) is on cooldown to prevent the cancel of Storm Shroud when autocasting Volt Salvo
 
-Search = <result control-mode="bns" skillbar-8="133231" skillbar-ui-effect="event" />NewLine            </decision>NewLine          </layer>
-Replace = <result control-mode="bns" skillbar-8="133231" skillbar-ui-effect="event" />NewLine            </decision>NewLine          </layer> <layer> <decision> <condition skill="133220" /> <result skillbar-4="501" control-mode="classic" skillbar-ui-effect="event" /> <result skillbar-4="501" control-mode="bns" skillbar-ui-effect="event" /> </decision> </layer>
+Search = <layer>NewLine            <decision>NewLine              <condition skill="133200" />NewLine              <result context-3="133200" control-mode="classic" skillbar-ui-effect="event" />NewLine
+Replace = <layer> <decision> <condition skill="133221" /> <result skillbar-4="501" control-mode="classic" skillbar-ui-effect="event" /> <result skillbar-4="501" control-mode="bns" skillbar-ui-effect="event" /> </decision> </layer> <layer>NewLine            <decision>NewLine              <condition skill="133200" />NewLine              <result context-3="133200" control-mode="classic" skillbar-ui-effect="event" />NewLine
 
 // --------------------------------------------------------------------------
 
