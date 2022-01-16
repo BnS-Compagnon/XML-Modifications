@@ -365,5 +365,3 @@ Search = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-ke
 Replace = <result cmd-key-double-left="65011" cmd-key-double-right="65012" cmd-key-down="133412" cmd-key-left="133440" cmd-key-right="133460" context-2="133002" control-mode="bns" skillbar-1="133041" skillbar-2="133041" skillbar-3="133062" skillbar-5="133041" skillbar-8="133250" stance="501" />
 
 // --------------------------------------------------------------------------
-
-Description = (By Vectoriel) [Disable Glacier (B), Pulse Break (Z), High Voltage (C), Spark Up (C)] [Macro TB] || Check : https://hackmd.io/O0YUxikESaaPOgXr0XuDWA
